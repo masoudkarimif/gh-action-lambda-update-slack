@@ -15,6 +15,9 @@ inputs:
   code_path: 
     description: 'Path of the .zip file to be deployed'
     required: true
+  working_directory: 
+    description: 'Current working directory'
+    required: false
   aws_region: 
     description: 'AWS region'
     required: true
@@ -39,6 +42,7 @@ runs:
     - ${{ inputs.s3_key }}
     - ${{ inputs.function_name }}
     - ${{ inputs.code_path }}
+    - ${{ inputs.working_directory }}
     - ${{ inputs.aws_region }}
     - ${{ inputs.aws_access_key_id }}
     - ${{ inputs.aws_secret_access_key }}
