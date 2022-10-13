@@ -18,7 +18,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Updating Lambda
-      uses: masoudkarimif/gh-action-lambda-update-slack@v1
+      uses: masoudkarimif/gh-action-lambda-update-slack@v1.0.1
       env:
         s3_bucket: <S3_BUCKET_NAME>
         s3_key: <S3_OBJECT>
