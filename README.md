@@ -19,7 +19,7 @@ jobs:
 
     - name: Updating Lambda
       uses: masoudkarimif/gh-action-lambda-update-slack@v1.0.1
-      env:
+      with:
         s3_bucket: <S3_BUCKET_NAME>
         s3_key: <S3_OBJECT>
         code_path: <PATH_TO_ZIP_PACKAGE>
