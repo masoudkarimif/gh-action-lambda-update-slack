@@ -33,7 +33,7 @@ inputs:
 
 runs:
   using: 'docker'
-  image: 'masoudkf/docker-lambda-deploy:latest'
+  image: 'docker://masoudkf/docker-lambda-deploy:latest'
   args:
     - ${{ inputs.s3_bucket }}
     - ${{ inputs.s3_key }}
