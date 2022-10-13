@@ -1,0 +1,49 @@
+# action.yml
+name: 'Lambda Update with Slack'
+description: 'This action updates a Lambda function from a .zip file and sends notifications on Slack'
+author: 'masoudkarimif'
+inputs:
+  s3_bucket: 
+    description: 'Name of the S3 bucket to upload the code to'
+    required: true
+  s3_key: 
+    description: 'Name of the S3 object for the artifact'
+    required: true
+  function_name: 
+    description: 'Name of the Lambda function'
+    required: true
+  code_path: 
+    description: 'Path of the .zip file to be deployed'
+    required: true
+  aws_region: 
+    description: 'AWS region'
+    required: true
+  aws_access_key_id: 
+    description: 'AWS access key id'
+    required: false
+  aws_secret_access_key: 
+    description: 'AWS secret access key'
+    required: false
+  slack_hook: 
+    description: 'Slack hook endpoint'
+    required: false 
+  env: 
+    description: 'Name of the environment (e.g. dev, stage, prod)'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'masoudkf/docker-lambda-deploy:latest'
+  args:
+    - ${{ inputs.s3_bucket }}
+    - ${{ inputs.s3_key }}
+    - ${{ inputs.function_name }}
+    - ${{ inputs.code_path }}
+    - ${{ inputs.aws_region }}
+    - ${{ inputs.aws_access_key_id }}
+    - ${{ inputs.aws_secret_access_key }}
+    - ${{ inputs.slack_hook }}
+    - ${{ inputs.env }}
+branding:
+  icon: 'upload-cloud'
+  color: 'orange'
