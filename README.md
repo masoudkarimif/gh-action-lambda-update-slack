@@ -24,6 +24,8 @@ jobs:
         s3_key: <S3_OBJECT>
         code_path: <PATH_TO_ZIP_PACKAGE>
         aws_region: <AWS_REGION>
+        env: <ENVIRONMENT_NAME>
+        function_name: <FUNCTION_NAME>
         aws_access_key_id: <XXXXX>
         aws_secret_access_key: <XXXXX>
         slack_hook: <SLACK_HOOK_ENDPOINT>
